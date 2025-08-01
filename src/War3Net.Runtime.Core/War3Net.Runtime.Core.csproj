@@ -16,14 +16,8 @@
     <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+  <ItemGroup>
     <ProjectReference Include="..\War3Net.Build.Core\War3Net.Build.Core.csproj" />
-    <ProjectReference Include="..\War3Net.Rendering\War3Net.Rendering.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
-    <PackageReference Include="War3Net.Build.Core" Version="1.7.2" />
-    <!-- TODO: packageref -->
     <ProjectReference Include="..\War3Net.Rendering\War3Net.Rendering.csproj" />
   </ItemGroup>
 
