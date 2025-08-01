@@ -8,13 +8,7 @@
     <PackageReference Include="NLua" Version="1.4.32" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
-    <ProjectReference Include="..\War3Net.CodeAnalysis.Transpilers\War3Net.CodeAnalysis.Transpilers.csproj" />
-    <ProjectReference Include="..\War3Net.Runtime.Api.Common\War3Net.Runtime.Api.Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
-    <!-- todo: packagereferences -->
+  <ItemGroup>
     <ProjectReference Include="..\War3Net.CodeAnalysis.Transpilers\War3Net.CodeAnalysis.Transpilers.csproj" />
     <ProjectReference Include="..\War3Net.Runtime.Api.Common\War3Net.Runtime.Api.Common.csproj" />
   </ItemGroup>

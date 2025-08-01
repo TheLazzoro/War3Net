@@ -4,15 +4,9 @@
     <TargetFramework>net5.0-windows</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+  <ItemGroup>
     <ProjectReference Include="..\..\src\War3Net.Runtime.Core\War3Net.Runtime.Core.csproj" />
     <ProjectReference Include="..\..\submodules\CSharp.lua\CSharp.lua.CoreSystem\CSharp.lua.CoreSystem.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
-    <!-- TODO: PackageReference instead of ProjectReference -->
-    <ProjectReference Include="..\..\src\War3Net.Runtime.Core\War3Net.Runtime.Core.csproj" />
-    <PackageReference Include="War3Net.CSharpLua.CoreSystem" Version="$(War3NetCSharpLuaCoreSystemVersion)" />
   </ItemGroup>
 
 </Project>
