@@ -4,12 +4,7 @@
     <TargetFrameworks>net5.0;net5.0-windows</TargetFrameworks>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
-    <ProjectReference Include="..\War3Net.Runtime.Core\War3Net.Runtime.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
-    <!-- todo: packagereferences -->
+  <ItemGroup>
     <ProjectReference Include="..\War3Net.Runtime.Core\War3Net.Runtime.Core.csproj" />
   </ItemGroup>
 

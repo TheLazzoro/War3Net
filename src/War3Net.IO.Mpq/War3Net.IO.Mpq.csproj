@@ -10,12 +10,8 @@
     <PackageTags>mpq;warcraft3</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+  <ItemGroup>
     <ProjectReference Include="..\War3Net.IO.Compression\War3Net.IO.Compression.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
-    <PackageReference Include="War3Net.IO.Compression" Version="$(War3NetIOCompressionVersion)" />
   </ItemGroup>
 
 </Project>
