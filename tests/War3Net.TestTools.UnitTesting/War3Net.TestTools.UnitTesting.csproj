@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>$(TfmGroupDotNet)</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,10 +11,6 @@
   <ItemGroup>
     <Compile Remove="TestData\Script\**" />
     <Content Remove="TestData\Script\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="TestData\Maps\ExampleMap203.w3x" />
   </ItemGroup>
 
 </Project>
