@@ -2,9 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>$(TfmGroupDotNet)</TargetFrameworks>
-    <Version>$(War3NetModelingVersion)</Version>
   </PropertyGroup>
-  
+
   <PropertyGroup>
     <Description>Library for handling Warcraft III models (.mdl and .mdx files).</Description>
     <PackageTags>mdl;mdx;warcraft3</PackageTags>
@@ -13,5 +12,9 @@
   <ItemGroup>
     <ProjectReference Include="..\War3Net.Common\War3Net.Common.csproj" />
   </ItemGroup>
-	
+
+  <ItemGroup Condition="'$(Configuration)'=='Release'">
+    <PackageReference Include="War3Net.Common" />
+  </ItemGroup>
+
 </Project>

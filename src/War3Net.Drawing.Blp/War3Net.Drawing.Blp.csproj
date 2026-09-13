@@ -3,11 +3,10 @@
   <PropertyGroup>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <TargetFrameworks>$(TfmGroupDotNetWindows)</TargetFrameworks>
-    <Version>$(War3NetDrawingBlpVersion)</Version>
   </PropertyGroup>
 
   <PropertyGroup>
-    <Description>War3Net.Drawing.Blp is a library for reading files with the ".blp" extension.</Description>
+    <Description>War3Net.Drawing.Blp is a library for reading and writing files with the ".blp" extension.</Description>
     <PackageTags>blp;warcraft3</PackageTags>
   </PropertyGroup>
 
@@ -15,12 +14,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup Condition="!$([System.String]::Copy('$(TargetFramework)').Contains('-windows'))">
-    <PackageReference Include="JpegLibrary" Version="0.3.30" />
+  <ItemGroup>
+    <PackageReference Include="JpegLibrary" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\War3Net.Common\War3Net.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)'=='Release'">
+    <PackageReference Include="War3Net.Common" />
   </ItemGroup>
 
 </Project>

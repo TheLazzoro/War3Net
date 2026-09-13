@@ -2,9 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>$(TfmGroupDotNet)</TargetFrameworks>
-    <Version>$(War3NetIOMpqVersion)</Version>
   </PropertyGroup>
-  
+
   <PropertyGroup>
     <Description>Library for opening and creating files in MPQ format.</Description>
     <PackageTags>mpq;warcraft3</PackageTags>
@@ -12,6 +11,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\War3Net.IO.Compression\War3Net.IO.Compression.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)'=='Release'">
+    <PackageReference Include="War3Net.IO.Compression" />
   </ItemGroup>
 
 </Project>
