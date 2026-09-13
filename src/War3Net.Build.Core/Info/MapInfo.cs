@@ -161,47 +161,47 @@
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public int MinOpacity { get; set; }
+        public int HDWaterMinOpacity { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public int MaxOpacity { get; set; }
+        public int HDWaterMaxOpacity { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public int Reflectivity { get; set; }
+        public int HDWaterReflectivity { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public int Emissivity { get; set; }
+        public int HDWaterEmissivity { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public int EdgeSoftness { get; set; }
+        public int HDWaterEdgeSoftness { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public int WavesVertexDisplacement { get; set; }
+        public int HDWaterWavesVertexDisplacement { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public int WavesNormalMapStrength { get; set; }
+        public int HDWaterWavesNormalMapStrength { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public Color WaterSettingsOverrideColorHD { get; set; }
+        public Color HDWaterOverrideColor { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public int EnvmapReflectivity { get; set; }
+        public int HDWaterEnvmapReflectivity { get; set; }
 
 
         public List<PlayerData> Players { get; init; } = new();

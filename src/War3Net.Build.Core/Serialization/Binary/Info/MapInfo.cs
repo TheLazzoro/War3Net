@@ -162,15 +162,15 @@
 
                 if (FormatVersion >= MapInfoFormatVersion.v39)
                 {
-                    MinOpacity = reader.ReadInt32();
-                    MaxOpacity = reader.ReadInt32();
-                    Reflectivity = reader.ReadInt32();
-                    Emissivity = reader.ReadInt32();
-                    EdgeSoftness = reader.ReadInt32();
-                    WavesVertexDisplacement = reader.ReadInt32();
-                    WavesNormalMapStrength = reader.ReadInt32();
-                    WaterSettingsOverrideColorHD = reader.ReadColorBgra();
-                    EnvmapReflectivity = reader.ReadInt32();
+                    HDWaterMinOpacity = reader.ReadInt32();
+                    HDWaterMaxOpacity = reader.ReadInt32();
+                    HDWaterReflectivity = reader.ReadInt32();
+                    HDWaterEmissivity = reader.ReadInt32();
+                    HDWaterEdgeSoftness = reader.ReadInt32();
+                    HDWaterWavesVertexDisplacement = reader.ReadInt32();
+                    HDWaterWavesNormalMapStrength = reader.ReadInt32();
+                    HDWaterOverrideColor = reader.ReadColorBgra();
+                    HDWaterEnvmapReflectivity = reader.ReadInt32();
 
                     var unknown1 = reader.ReadByte();
                     var unknown2 = reader.ReadByte();
