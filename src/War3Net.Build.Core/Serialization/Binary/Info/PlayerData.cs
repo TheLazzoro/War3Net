@@ -12,6 +12,7 @@
             Id = reader.ReadInt32();
             Controller = reader.ReadInt32<PlayerController>();
             Race = reader.ReadInt32<PlayerRace>();
+            RaceHUD = reader.ReadInt32<PlayerRaceHUD>();
             Flags = reader.ReadInt32<PlayerFlags>();
             Name = reader.ReadChars();
             StartPosition = new Vector2(reader.ReadSingle(), reader.ReadSingle());

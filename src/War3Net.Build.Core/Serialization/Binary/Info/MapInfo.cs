@@ -53,6 +53,14 @@
             MapFlags = reader.ReadInt32<MapFlags>();
             Tileset = reader.ReadByte<Tileset>();
 
+            if (FormatVersion >= MapInfoFormatVersion.v39)
+            {
+                var unknown1 = reader.ReadByte();
+                var unknown2 = reader.ReadByte();
+                var unknown3 = reader.ReadByte();
+                var unknown4 = reader.ReadByte();
+            }
+
             if (FormatVersion >= MapInfoFormatVersion.v23)
             {
                 LoadingScreenBackgroundNumber = reader.ReadInt32();
@@ -108,6 +116,18 @@
                     FogDensity = reader.ReadSingle();
                     FogColor = reader.ReadColorBgra();
 
+                    if (FormatVersion >= MapInfoFormatVersion.v39)
+                    {
+                        FogHeightStart = reader.ReadSingle();
+                        FogHeightEnd = reader.ReadSingle();
+                        FogLinearStart = reader.ReadSingle();
+                        FogLinearEnd = reader.ReadSingle();
+                        FogMaxOpacity = reader.ReadSingle();
+                        FogDrawFogOverSky = reader.ReadByte();
+                        var unknown = reader.ReadInt24();
+                    }
+
+
                     if (FormatVersion >= MapInfoFormatVersion.v25)
                     {
                         GlobalWeather = reader.ReadInt32<WeatherType>();
@@ -138,6 +158,24 @@
                 if (FormatVersion >= MapInfoFormatVersion.v33)
                 {
                     ForceMinCameraZoom = reader.ReadInt32();
+                }
+
+                if (FormatVersion >= MapInfoFormatVersion.v39)
+                {
+                    MinOpacity = reader.ReadInt32();
+                    MaxOpacity = reader.ReadInt32();
+                    Reflectivity = reader.ReadInt32();
+                    Emissivity = reader.ReadInt32();
+                    EdgeSoftness = reader.ReadInt32();
+                    WavesVertexDisplacement = reader.ReadInt32();
+                    WavesNormalMapStrength = reader.ReadInt32();
+                    WaterSettingsOverrideColorHD = reader.ReadColorBgra();
+                    EnvmapReflectivity = reader.ReadInt32();
+
+                    var unknown1 = reader.ReadByte();
+                    var unknown2 = reader.ReadByte();
+                    var unknown3 = reader.ReadByte();
+                    var unknown4 = reader.ReadByte();
                 }
             }
 

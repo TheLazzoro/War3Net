@@ -27,6 +27,11 @@
 
         public PlayerRace Race { get; set; }
 
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public PlayerRaceHUD RaceHUD { get; set; }
+
         public PlayerFlags Flags { get; set; }
 
         public string Name { get; set; }

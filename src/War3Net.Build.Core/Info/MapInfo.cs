@@ -128,6 +128,82 @@
         /// </summary>
         public int ForceMinCameraZoom { get; set; }
 
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public float FogHeightStart { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public float FogHeightEnd { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public float FogLinearStart { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public float FogLinearEnd { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public float FogMaxOpacity { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public byte FogDrawFogOverSky { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public int MinOpacity { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public int MaxOpacity { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public int Reflectivity { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public int Emissivity { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public int EdgeSoftness { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public int WavesVertexDisplacement { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public int WavesNormalMapStrength { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public Color WaterSettingsOverrideColorHD { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public int EnvmapReflectivity { get; set; }
+
+
         public List<PlayerData> Players { get; init; } = new();
 
         public List<ForceData> Forces { get; init; } = new();
