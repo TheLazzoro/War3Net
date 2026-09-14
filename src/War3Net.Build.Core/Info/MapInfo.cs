@@ -203,6 +203,21 @@
         /// </summary>
         public int HDWaterEnvmapReflectivity { get; set; }
 
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public uint Unk8 { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public uint Unk9 { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public uint Unk10 { get; set; }
+
 
         public List<PlayerData> Players { get; init; } = new();
 

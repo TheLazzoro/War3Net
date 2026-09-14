@@ -36,6 +36,7 @@
             writer.Write(Id);
             writer.Write((int)Controller);
             writer.Write((int)Race);
+            writer.Write((int)RaceHUD);
             writer.Write((int)Flags);
             writer.WriteString(Name);
             writer.Write(StartPosition.X);

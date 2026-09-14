@@ -27,6 +27,10 @@
 
         public Color Color { get; set; }
 
+        public int CameraBlocker { get; set; }
+
+        public int AlphaTileMinimapColor { get; set; }
+
         public float Width => Right - Left;
 
         public float Height => Top - Bottom;

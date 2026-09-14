@@ -23,12 +23,22 @@
             OwnerId = reader.ReadInt32();
             Unk1 = reader.ReadByte();
             Unk2 = reader.ReadByte();
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                Unk3 = reader.ReadUInt32();
+            }
+
             HP = reader.ReadInt32();
             MP = reader.ReadInt32();
 
             if (formatVersion == MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11)
             {
                 MapItemTableId = reader.ReadInt32();
+            }
+
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                Unk4 = reader.ReadUInt32();
             }
 
             nint itemSetCount = reader.ReadInt32();
@@ -41,7 +51,7 @@
             TargetAcquisition = reader.ReadSingle();
 
             HeroLevel = reader.ReadInt32();
-            if ((formatVersion == MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11) || subVersion == MapWidgetsSubVersion.v10)
+            if ((formatVersion >= MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11) || subVersion == MapWidgetsSubVersion.v10)
             {
                 HeroStrength = reader.ReadInt32();
                 HeroAgility = reader.ReadInt32();
@@ -75,6 +85,11 @@
                 WaygateDestinationRegionId = reader.ReadInt32();
                 CreationNumber = reader.ReadInt32();
             }
+
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                Unk5 = reader.ReadBytes(12);
+            }
         }
 
         internal void WriteTo(BinaryWriter writer, MapWidgetsFormatVersion formatVersion, MapWidgetsSubVersion subVersion, bool useNewFormat)
@@ -98,12 +113,21 @@
             writer.Write(OwnerId);
             writer.Write(Unk1);
             writer.Write(Unk2);
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                writer.Write(Unk3);
+            }
             writer.Write(HP);
             writer.Write(MP);
 
             if (formatVersion == MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11)
             {
                 writer.Write(MapItemTableId);
+            }
+
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                writer.Write(Unk4);
             }
 
             writer.Write(ItemTableSets.Count);
@@ -146,6 +170,11 @@
                 writer.Write(CustomPlayerColorId);
                 writer.Write(WaygateDestinationRegionId);
                 writer.Write(CreationNumber);
+            }
+
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                writer.Write(Unk5);
             }
         }
     }

@@ -1,4 +1,6 @@
-﻿namespace War3Net.Build.Widget
+﻿using War3Net.IO.Mpq.Extensions;
+
+namespace War3Net.Build.Widget
 {
     public sealed partial class DoodadData : WidgetData
     {
@@ -19,6 +21,11 @@
             useNewFormat = reader.PeekChar() >= 0x20;
             SkinId = useNewFormat ? reader.ReadInt32() : TypeId;
 
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                GroupId = reader.ReadInt32();
+            }
+
             if (formatVersion > MapWidgetsFormatVersion.v6)
             {
                 State = reader.ReadByte<DoodadState>();
@@ -37,7 +44,25 @@
                 }
             }
 
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                Unknown1 = reader.ReadUInt32();
+            }
+
             CreationNumber = reader.ReadInt32();
+
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                Unknown2 = reader.ReadUInt32();
+                Unknown3 = reader.ReadUInt32();
+                Roll = reader.ReadSingle();
+                Pitch = reader.ReadSingle();
+                var lightCount = reader.ReadUInt32();
+                for (uint i = 0; i < lightCount; i++)
+                {
+                    DoodadLights.Add(reader.ReadMapDoodadLightData());
+                }
+            }
         }
 
         internal void WriteTo(BinaryWriter writer, MapWidgetsFormatVersion formatVersion, MapWidgetsSubVersion subVersion, bool useNewFormat)
@@ -55,6 +80,11 @@
             if (useNewFormat)
             {
                 writer.Write(SkinId);
+            }
+
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                writer.Write(GroupId);
             }
 
             if (formatVersion > MapWidgetsFormatVersion.v6)
@@ -75,7 +105,25 @@
                 }
             }
 
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                writer.Write(Unknown1);
+            }
+
             writer.Write(CreationNumber);
+
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                writer.Write(Unknown2);
+                writer.Write(Unknown3);
+                writer.Write(Roll);
+                writer.Write(Pitch);
+                writer.Write(DoodadLights.Count);
+                foreach (var light in DoodadLights)
+                {
+                    writer.Write(light);
+                }
+            }
         }
     }
 }

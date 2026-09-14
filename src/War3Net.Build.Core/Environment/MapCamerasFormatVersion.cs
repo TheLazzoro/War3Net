@@ -9,5 +9,6 @@ namespace War3Net.Build.Environment
     {
         /// <summary>The initial version.</summary>
         v0 = 0,
+        v3 = 3,
     }
 }

@@ -13,5 +13,19 @@
 
         // in %, where 0x64 = 100%
         public byte Life { get; set; }
+
+        public int GroupId { get; set; }
+
+        public uint Unknown1 { get; set; }
+
+        public uint Unknown2 { get; set; }
+
+        public uint Unknown3 { get; set; }
+
+        public float Roll { get; set; }
+
+        public float Pitch { get; set; }
+
+        public List<DoodadLightData> DoodadLights { get; set; } = new();
     }
 }

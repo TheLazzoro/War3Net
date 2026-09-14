@@ -33,7 +33,15 @@
 
         public float LocalRoll { get; set; }
 
+        public float DoFDistance { get; set; }
+
+        public float DoFScale { get; set; }
+
+        public float PosAbsoluteZ { get; set; }
+
         public string Name { get; set; }
+
+        public int Unk1 { get; set; }
 
         public override string ToString() => Name;
     }

@@ -17,6 +17,13 @@
 
         public byte Unk2 { get; set; }
 
+        public uint Unk3 { get; set; }
+
+        public uint Unk4 { get; set; }
+
+        public byte[] Unk5 { get; set; }
+
+
         /// <summary>
         /// Set to -1 to use the default value.
         /// </summary>

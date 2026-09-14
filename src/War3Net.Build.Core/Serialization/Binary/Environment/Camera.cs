@@ -24,12 +24,24 @@
                 LocalPitch = reader.ReadSingle();
                 LocalYaw = reader.ReadSingle();
                 LocalRoll = reader.ReadSingle();
+
+                if (formatVersion >= MapCamerasFormatVersion.v3)
+                {
+                    DoFDistance = reader.ReadSingle();
+                    DoFScale = reader.ReadSingle();
+                    PosAbsoluteZ = reader.ReadSingle();
+                }
             }
 
             Name = reader.ReadChars();
             if (string.IsNullOrWhiteSpace(Name))
             {
                 throw new InvalidDataException($"Camera name must contain at least one non-whitespace character.");
+            }
+
+            if (formatVersion >= MapCamerasFormatVersion.v3)
+            {
+                Unk1 = reader.ReadInt32();
             }
         }
 
@@ -51,9 +63,21 @@
                 writer.Write(LocalPitch);
                 writer.Write(LocalYaw);
                 writer.Write(LocalRoll);
+
+                if (formatVersion >= MapCamerasFormatVersion.v3)
+                {
+                    writer.Write(DoFDistance);
+                    writer.Write(DoFScale);
+                    writer.Write(PosAbsoluteZ);
+                }
             }
 
             writer.WriteString(Name);
+
+            if (formatVersion >= MapCamerasFormatVersion.v3)
+            {
+                writer.Write(Unk1);
+            }
         }
     }
 }
