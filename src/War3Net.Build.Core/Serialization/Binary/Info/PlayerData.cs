@@ -1,4 +1,6 @@
-﻿namespace War3Net.Build.Info
+﻿using System.Reflection.PortableExecutable;
+
+namespace War3Net.Build.Info
 {
     public sealed partial class PlayerData
     {
@@ -12,7 +14,11 @@
             Id = reader.ReadInt32();
             Controller = reader.ReadInt32<PlayerController>();
             Race = reader.ReadInt32<PlayerRace>();
-            RaceHUD = reader.ReadInt32<PlayerRaceHUD>();
+            if (formatVersion >= MapInfoFormatVersion.v39)
+            {
+                RaceHUD = reader.ReadInt32<PlayerRaceHUD>();
+            }
+
             Flags = reader.ReadInt32<PlayerFlags>();
             Name = reader.ReadChars();
             StartPosition = new Vector2(reader.ReadSingle(), reader.ReadSingle());
@@ -36,7 +42,11 @@
             writer.Write(Id);
             writer.Write((int)Controller);
             writer.Write((int)Race);
-            writer.Write((int)RaceHUD);
+            if (formatVersion >= MapInfoFormatVersion.v39)
+            {
+                writer.Write((int)RaceHUD);
+            }
+
             writer.Write((int)Flags);
             writer.WriteString(Name);
             writer.Write(StartPosition.X);
