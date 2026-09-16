@@ -121,7 +121,9 @@
                         FogLinearEnd = reader.ReadSingle();
                         FogMaxOpacity = reader.ReadSingle();
                         FogDrawFogOverSky = reader.ReadByte();
-                        Unk9 = reader.ReadUInt24();
+                        Unk9 = reader.ReadByte();
+                        Unk10 = reader.ReadByte();
+                        Unk11 = reader.ReadByte();
                     }
 
                     if (FormatVersion >= MapInfoFormatVersion.v25)
@@ -168,7 +170,7 @@
                     HDWaterOverrideColor = reader.ReadColorBgra();
                     HDWaterEnvmapReflectivity = reader.ReadInt32();
 
-                    Unk10 = reader.ReadUInt32();
+                    Unk12 = reader.ReadUInt32();
                 }
             }
 
@@ -370,7 +372,9 @@
                         writer.Write(FogLinearEnd);
                         writer.Write(FogMaxOpacity);
                         writer.Write(FogDrawFogOverSky);
-                        writer.WriteUInt24(Unk9);
+                        writer.Write(Unk9);
+                        writer.Write(Unk10);
+                        writer.Write(Unk11);
                     }
 
                     if (FormatVersion >= MapInfoFormatVersion.v25)
@@ -418,7 +422,7 @@
                     writer.Write(HDWaterOverrideColor.ToBgra());
                     writer.Write(HDWaterEnvmapReflectivity);
 
-                    writer.Write(Unk10);
+                    writer.Write(Unk12);
                 }
             }
 

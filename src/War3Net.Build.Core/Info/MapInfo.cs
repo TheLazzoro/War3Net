@@ -211,12 +211,22 @@
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public uint Unk9 { get; set; }
+        public byte Unk9 { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public uint Unk10 { get; set; }
+        public byte Unk10 { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public byte Unk11 { get; set; }
+
+        /// <summary>
+        /// Definitive Edition (3.0.0).
+        /// </summary>
+        public uint Unk12 { get; set; }
 
 
         public List<PlayerData> Players { get; init; } = new();

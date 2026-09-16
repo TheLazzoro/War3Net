@@ -33,7 +33,7 @@ namespace War3Net.Build.Widget
 
             Life = reader.ReadByte();
 
-            if (formatVersion == MapWidgetsFormatVersion.v8)
+            if (formatVersion >= MapWidgetsFormatVersion.v8)
             {
                 MapItemTableId = reader.ReadInt32();
 
@@ -53,8 +53,6 @@ namespace War3Net.Build.Widget
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                Unknown2 = reader.ReadUInt32();
-                Unknown3 = reader.ReadUInt32();
                 Roll = reader.ReadSingle();
                 Pitch = reader.ReadSingle();
                 var lightCount = reader.ReadUInt32();
@@ -94,7 +92,7 @@ namespace War3Net.Build.Widget
 
             writer.Write(Life);
 
-            if (formatVersion == MapWidgetsFormatVersion.v8)
+            if (formatVersion >= MapWidgetsFormatVersion.v8)
             {
                 writer.Write(MapItemTableId);
 
@@ -114,8 +112,6 @@ namespace War3Net.Build.Widget
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                writer.Write(Unknown2);
-                writer.Write(Unknown3);
                 writer.Write(Roll);
                 writer.Write(Pitch);
                 writer.Write(DoodadLights.Count);

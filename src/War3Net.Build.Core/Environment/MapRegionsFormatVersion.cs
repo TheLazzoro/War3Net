@@ -17,6 +17,7 @@ namespace War3Net.Build.Environment
         /// <summary>The initial version.</summary>
         v5 = 5,
 
+        /// <summary>Patch 3.0.0.</summary>
         v7 = 7,
     }
 }

@@ -18,10 +18,6 @@
 
         public uint Unknown1 { get; set; }
 
-        public uint Unknown2 { get; set; }
-
-        public uint Unknown3 { get; set; }
-
         public float Roll { get; set; }
 
         public float Pitch { get; set; }
