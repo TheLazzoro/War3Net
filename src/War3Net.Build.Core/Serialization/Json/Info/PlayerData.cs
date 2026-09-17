@@ -17,6 +17,11 @@
             Id = jsonElement.GetInt32(nameof(Id));
             Controller = jsonElement.GetInt32<PlayerController>(nameof(Controller));
             Race = jsonElement.GetInt32<PlayerRace>(nameof(Race));
+            if (formatVersion >= MapInfoFormatVersion.v39)
+            {
+                RaceHUD = jsonElement.GetInt32<PlayerRaceHUD>(nameof(RaceHUD));
+            }
+
             Flags = jsonElement.GetInt32<PlayerFlags>(nameof(Flags));
             Name = jsonElement.GetString(nameof(Name));
             StartPosition = jsonElement.GetVector2(nameof(StartPosition));
@@ -47,6 +52,11 @@
             writer.WriteNumber(nameof(Id), Id);
             writer.WriteObject(nameof(Controller), Controller, options);
             writer.WriteObject(nameof(Race), Race, options);
+            if (formatVersion >= MapInfoFormatVersion.v39)
+            {
+                writer.WriteObject(nameof(RaceHUD), RaceHUD, options);
+            }
+
             writer.WriteObject(nameof(Flags), Flags, options);
             writer.WriteString(nameof(Name), Name);
             writer.Write(nameof(StartPosition), StartPosition);

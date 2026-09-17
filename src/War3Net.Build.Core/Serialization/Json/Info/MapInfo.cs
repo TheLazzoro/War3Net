@@ -59,6 +59,11 @@
             MapFlags = jsonElement.GetInt32<MapFlags>(nameof(MapFlags));
             Tileset = jsonElement.GetByte<Tileset>(nameof(Tileset));
 
+            if (FormatVersion >= MapInfoFormatVersion.v39)
+            {
+                Unk8 = jsonElement.GetUInt32(nameof(Unk8));
+            }
+
             if (FormatVersion >= MapInfoFormatVersion.v23)
             {
                 LoadingScreenBackgroundNumber = jsonElement.GetInt32(nameof(LoadingScreenBackgroundNumber));
@@ -114,6 +119,19 @@
                     FogDensity = jsonElement.GetSingle(nameof(FogDensity));
                     FogColor = jsonElement.GetColor(nameof(FogColor));
 
+                    if (FormatVersion >= MapInfoFormatVersion.v39)
+                    {
+                        FogHeightStart = jsonElement.GetSingle(nameof(FogHeightStart));
+                        FogHeightEnd = jsonElement.GetSingle(nameof(FogHeightEnd));
+                        FogLinearStart = jsonElement.GetSingle(nameof(FogLinearStart));
+                        FogLinearEnd = jsonElement.GetSingle(nameof(FogLinearEnd));
+                        FogMaxOpacity = jsonElement.GetSingle(nameof(FogMaxOpacity));
+                        FogDrawFogOverSky = jsonElement.GetByte(nameof(FogDrawFogOverSky));
+                        Unk9 = jsonElement.GetByte(nameof(Unk9));
+                        Unk10 = jsonElement.GetByte(nameof(Unk10));
+                        Unk11 = jsonElement.GetByte(nameof(Unk11));
+                    }
+
                     if (FormatVersion >= MapInfoFormatVersion.v25)
                     {
                         GlobalWeather = jsonElement.GetInt32<WeatherType>(nameof(GlobalWeather));
@@ -144,6 +162,21 @@
                 if (FormatVersion >= MapInfoFormatVersion.v33)
                 {
                     ForceMinCameraZoom = jsonElement.GetInt32(nameof(ForceMinCameraZoom));
+                }
+
+                if (FormatVersion >= MapInfoFormatVersion.v39)
+                {
+                    HDWaterMinOpacity = jsonElement.GetInt32(nameof(HDWaterMinOpacity));
+                    HDWaterMaxOpacity = jsonElement.GetInt32(nameof(HDWaterMaxOpacity));
+                    HDWaterReflectivity = jsonElement.GetInt32(nameof(HDWaterReflectivity));
+                    HDWaterEmissivity = jsonElement.GetInt32(nameof(HDWaterEmissivity));
+                    HDWaterEdgeSoftness = jsonElement.GetInt32(nameof(HDWaterEdgeSoftness));
+                    HDWaterWavesVertexDisplacement = jsonElement.GetInt32(nameof(HDWaterWavesVertexDisplacement));
+                    HDWaterWavesNormalMapStrength = jsonElement.GetInt32(nameof(HDWaterWavesNormalMapStrength));
+                    HDWaterOverrideColor = Color.FromArgb(jsonElement.GetInt32(nameof(HDWaterOverrideColor)));
+                    HDWaterEnvmapReflectivity = jsonElement.GetInt32(nameof(HDWaterEnvmapReflectivity));
+
+                    Unk12 = jsonElement.GetUInt32(nameof(Unk12));
                 }
             }
 
@@ -238,6 +271,11 @@
             writer.WriteObject(nameof(MapFlags), MapFlags, options);
             writer.WriteObject(nameof(Tileset), Tileset, options);
 
+            if (FormatVersion >= MapInfoFormatVersion.v39)
+            {
+                writer.WriteNumber(nameof(Unk8), Unk8);
+            }
+
             if (FormatVersion >= MapInfoFormatVersion.v23)
             {
                 writer.WriteNumber(nameof(LoadingScreenBackgroundNumber), LoadingScreenBackgroundNumber);
@@ -293,6 +331,19 @@
                     writer.WriteNumber(nameof(FogDensity), FogDensity);
                     writer.Write(nameof(FogColor), FogColor);
 
+                    if (FormatVersion >= MapInfoFormatVersion.v39)
+                    {
+                        writer.WriteNumber(nameof(FogHeightStart), FogHeightStart);
+                        writer.WriteNumber(nameof(FogHeightEnd), FogHeightEnd);
+                        writer.WriteNumber(nameof(FogLinearStart), FogLinearStart);
+                        writer.WriteNumber(nameof(FogLinearEnd), FogLinearEnd);
+                        writer.WriteNumber(nameof(FogMaxOpacity), FogMaxOpacity);
+                        writer.WriteNumber(nameof(FogDrawFogOverSky), FogDrawFogOverSky);
+                        writer.WriteObject(nameof(Unk9), Unk9);
+                        writer.WriteObject(nameof(Unk10), Unk10);
+                        writer.WriteObject(nameof(Unk11), Unk11);
+                    }
+
                     if (FormatVersion >= MapInfoFormatVersion.v25)
                     {
                         writer.WriteObject(nameof(GlobalWeather), GlobalWeather, options);
@@ -324,6 +375,21 @@
                 if (FormatVersion >= MapInfoFormatVersion.v33)
                 {
                     writer.WriteObject(nameof(ForceMinCameraZoom), ForceMinCameraZoom, options);
+                }
+
+                if (FormatVersion >= MapInfoFormatVersion.v39)
+                {
+                    writer.WriteNumber(nameof(HDWaterMinOpacity), HDWaterMinOpacity);
+                    writer.WriteNumber(nameof(HDWaterMaxOpacity), HDWaterMaxOpacity);
+                    writer.WriteNumber(nameof(HDWaterReflectivity), HDWaterReflectivity);
+                    writer.WriteNumber(nameof(HDWaterEmissivity), HDWaterEmissivity);
+                    writer.WriteNumber(nameof(HDWaterEdgeSoftness), HDWaterEdgeSoftness);
+                    writer.WriteNumber(nameof(HDWaterWavesVertexDisplacement), HDWaterWavesVertexDisplacement);
+                    writer.WriteNumber(nameof(HDWaterWavesNormalMapStrength), HDWaterWavesNormalMapStrength);
+                    writer.WriteNumber(nameof(HDWaterOverrideColor), HDWaterOverrideColor.ToBgra());
+                    writer.WriteNumber(nameof(HDWaterEnvmapReflectivity), HDWaterEnvmapReflectivity);
+
+                    writer.WriteNumber(nameof(Unk12), Unk12);
                 }
             }
 

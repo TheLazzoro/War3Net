@@ -25,10 +25,15 @@
             OwnerId = jsonElement.GetInt32(nameof(OwnerId));
             Unk1 = jsonElement.GetByte(nameof(Unk1));
             Unk2 = jsonElement.GetByte(nameof(Unk2));
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                Unk3 = jsonElement.GetByte(nameof(Unk3));
+            }
+
             HP = jsonElement.GetInt32(nameof(HP));
             MP = jsonElement.GetInt32(nameof(MP));
 
-            if (formatVersion == MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11)
+            if (formatVersion >= MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11)
             {
                 MapItemTableId = jsonElement.GetInt32(nameof(MapItemTableId));
             }
@@ -42,7 +47,7 @@
             TargetAcquisition = jsonElement.GetSingle(nameof(TargetAcquisition));
 
             HeroLevel = jsonElement.GetInt32(nameof(HeroLevel));
-            if ((formatVersion == MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11) || subVersion == MapWidgetsSubVersion.v10)
+            if ((formatVersion >= MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11) || subVersion == MapWidgetsSubVersion.v10)
             {
                 HeroStrength = jsonElement.GetInt32(nameof(HeroStrength));
                 HeroAgility = jsonElement.GetInt32(nameof(HeroAgility));
@@ -74,6 +79,15 @@
                 WaygateDestinationRegionId = jsonElement.GetInt32(nameof(WaygateDestinationRegionId));
                 CreationNumber = jsonElement.GetInt32(nameof(CreationNumber));
             }
+
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                Unk4 = new byte[12];
+                for (var i = 0; i < 12; i++)
+                {
+                    Unk4[i] = jsonElement.GetByte(nameof(Unk4));
+                }
+            }
         }
 
         internal void ReadFrom(ref Utf8JsonReader reader, MapWidgetsFormatVersion formatVersion, MapWidgetsSubVersion subVersion, bool useNewFormat)
@@ -100,10 +114,15 @@
             writer.WriteNumber(nameof(OwnerId), OwnerId);
             writer.WriteNumber(nameof(Unk1), Unk1);
             writer.WriteNumber(nameof(Unk2), Unk2);
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                writer.WriteNumber(nameof(Unk3), Unk3);
+            }
+
             writer.WriteNumber(nameof(HP), HP);
             writer.WriteNumber(nameof(MP), MP);
 
-            if (formatVersion == MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11)
+            if (formatVersion >= MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11)
             {
                 writer.WriteNumber(nameof(MapItemTableId), MapItemTableId);
             }
@@ -120,7 +139,7 @@
             writer.WriteNumber(nameof(TargetAcquisition), TargetAcquisition);
 
             writer.WriteNumber(nameof(HeroLevel), HeroLevel);
-            if ((formatVersion == MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11) || subVersion == MapWidgetsSubVersion.v10)
+            if ((formatVersion >= MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11) || subVersion == MapWidgetsSubVersion.v10)
             {
                 writer.WriteNumber(nameof(HeroStrength), HeroStrength);
                 writer.WriteNumber(nameof(HeroAgility), HeroAgility);
@@ -155,6 +174,14 @@
                 writer.WriteNumber(nameof(CustomPlayerColorId), CustomPlayerColorId);
                 writer.WriteNumber(nameof(WaygateDestinationRegionId), WaygateDestinationRegionId);
                 writer.WriteNumber(nameof(CreationNumber), CreationNumber);
+            }
+
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                foreach (var b in Unk4)
+                {
+                    writer.WriteNumber(nameof(Unk4), b);
+                }
             }
 
             writer.WriteEndObject();
