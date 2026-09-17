@@ -21,5 +21,7 @@
         Underground = (byte)'G',
         Village = (byte)'V',
         VillageFall = (byte)'Q',
+        Undercity = (byte)'u',
+        Misc = (byte)'M',
     }
 }

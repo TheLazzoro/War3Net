@@ -19,9 +19,7 @@
 
         public uint Unk3 { get; set; }
 
-        public uint Unk4 { get; set; }
-
-        public byte[] Unk5 { get; set; }
+        public byte[] Unk4 { get; set; }
 
 
         /// <summary>

@@ -31,14 +31,9 @@
             HP = reader.ReadInt32();
             MP = reader.ReadInt32();
 
-            if (formatVersion == MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11)
+            if (formatVersion >= MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11)
             {
                 MapItemTableId = reader.ReadInt32();
-            }
-
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
-            {
-                Unk4 = reader.ReadUInt32();
             }
 
             nint itemSetCount = reader.ReadInt32();
@@ -88,7 +83,7 @@
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                Unk5 = reader.ReadBytes(12);
+                Unk4 = reader.ReadBytes(12);
             }
         }
 
@@ -117,17 +112,13 @@
             {
                 writer.Write(Unk3);
             }
+
             writer.Write(HP);
             writer.Write(MP);
 
-            if (formatVersion == MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11)
+            if (formatVersion >= MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11)
             {
                 writer.Write(MapItemTableId);
-            }
-
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
-            {
-                writer.Write(Unk4);
             }
 
             writer.Write(ItemTableSets.Count);
@@ -140,7 +131,7 @@
             writer.Write(TargetAcquisition);
 
             writer.Write(HeroLevel);
-            if ((formatVersion == MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11) || subVersion == MapWidgetsSubVersion.v10)
+            if ((formatVersion >= MapWidgetsFormatVersion.v8 && subVersion == MapWidgetsSubVersion.v11) || subVersion == MapWidgetsSubVersion.v10)
             {
                 writer.Write(HeroStrength);
                 writer.Write(HeroAgility);
@@ -174,7 +165,7 @@
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                writer.Write(Unk5);
+                writer.Write(Unk4);
             }
         }
     }
