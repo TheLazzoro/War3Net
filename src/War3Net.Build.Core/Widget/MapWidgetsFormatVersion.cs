@@ -18,6 +18,7 @@ namespace War3Net.Build.Widget
         /// <summary>The Frozen Throne format.</summary>
         v8 = 8,
 
+        /// <summary>Definitive Edition format.</summary>
         v13 = 13,
     }
 }

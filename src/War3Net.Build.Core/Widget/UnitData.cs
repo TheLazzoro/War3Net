@@ -17,7 +17,7 @@
 
         public byte Unk2 { get; set; }
 
-        public uint Unk3 { get; set; }
+        public uint GroupId { get; set; }
 
         public byte[] Unk4 { get; set; }
 

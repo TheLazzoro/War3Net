@@ -19,14 +19,15 @@
             useNewFormat = reader.PeekChar() >= 0x20;
             SkinId = useNewFormat ? reader.ReadInt32() : TypeId;
 
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                GroupId = reader.ReadUInt32();
+            }
+
             Flags = reader.ReadByte();
             OwnerId = reader.ReadInt32();
             Unk1 = reader.ReadByte();
             Unk2 = reader.ReadByte();
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
-            {
-                Unk3 = reader.ReadUInt32();
-            }
 
             HP = reader.ReadInt32();
             MP = reader.ReadInt32();
@@ -104,14 +105,15 @@
                 writer.Write(SkinId);
             }
 
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                writer.Write(GroupId);
+            }
+
             writer.Write(Flags);
             writer.Write(OwnerId);
             writer.Write(Unk1);
             writer.Write(Unk2);
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
-            {
-                writer.Write(Unk3);
-            }
 
             writer.Write(HP);
             writer.Write(MP);

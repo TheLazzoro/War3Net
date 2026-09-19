@@ -21,14 +21,15 @@
             Scale = jsonElement.GetVector3(nameof(Scale));
             SkinId = useNewFormat ? jsonElement.GetInt32(nameof(SkinId)) : TypeId;
 
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                GroupId = jsonElement.GetUInt32(nameof(GroupId));
+            }
+
             Flags = jsonElement.GetByte(nameof(Flags));
             OwnerId = jsonElement.GetInt32(nameof(OwnerId));
             Unk1 = jsonElement.GetByte(nameof(Unk1));
             Unk2 = jsonElement.GetByte(nameof(Unk2));
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
-            {
-                Unk3 = jsonElement.GetByte(nameof(Unk3));
-            }
 
             HP = jsonElement.GetInt32(nameof(HP));
             MP = jsonElement.GetInt32(nameof(MP));
@@ -110,14 +111,15 @@
                 writer.WriteNumber(nameof(SkinId), SkinId);
             }
 
+            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            {
+                writer.WriteNumber(nameof(GroupId), GroupId);
+            }
+
             writer.WriteNumber(nameof(Flags), Flags);
             writer.WriteNumber(nameof(OwnerId), OwnerId);
             writer.WriteNumber(nameof(Unk1), Unk1);
             writer.WriteNumber(nameof(Unk2), Unk2);
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
-            {
-                writer.WriteNumber(nameof(Unk3), Unk3);
-            }
 
             writer.WriteNumber(nameof(HP), HP);
             writer.WriteNumber(nameof(MP), MP);
