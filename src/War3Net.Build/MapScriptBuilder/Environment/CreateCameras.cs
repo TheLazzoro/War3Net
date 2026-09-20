@@ -43,7 +43,19 @@
                     writer.WriteCall(NativeName.CameraSetupSetField, cameraName, CameraFieldName.LocalRoll, JassLiteral.Real(camera.LocalRoll), "0.0");
                 }
 
+                if (mapCameras.FormatVersion >= MapCamerasFormatVersion.v3)
+                {
+                    writer.WriteCall(NativeName.CameraSetupSetField, cameraName, CameraFieldName.DoFDistance, JassLiteral.Real(camera.DoFDistance), "0.0");
+                    writer.WriteCall(NativeName.CameraSetupSetField, cameraName, CameraFieldName.DoFScale, JassLiteral.Real(camera.DoFScale), "0.0");
+                    writer.WriteCall(NativeName.CameraSetupSetField, cameraName, CameraFieldName.PosAbsoluteZ, JassLiteral.Real(camera.PosAbsoluteZ), "0.0");
+                }
+
                 writer.WriteCall(NativeName.CameraSetupSetDestPosition, cameraName, JassLiteral.Real(camera.TargetPosition.X), JassLiteral.Real(camera.TargetPosition.Y), "0.0");
+                if (mapCameras.FormatVersion >= MapCamerasFormatVersion.v3)
+                {
+                    writer.WriteCall(NativeName.BlzCameraSetupSetCameraType, cameraName, "0");
+                }
+
                 writer.WriteLine();
             }
 

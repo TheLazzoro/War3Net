@@ -15,6 +15,9 @@
             internal const string Rotation = "CAMERA_FIELD_ROTATION";
             internal const string TargetDistance = "CAMERA_FIELD_TARGET_DISTANCE";
             internal const string ZOffset = "CAMERA_FIELD_ZOFFSET";
+            internal const string DoFDistance = "CAMERA_FIELD_DEPTH_OF_FIELD_DISTANCE";
+            internal const string DoFScale = "CAMERA_FIELD_DEPTH_OF_FIELD_SCALE";
+            internal const string PosAbsoluteZ = "CAMERA_FIELD_ZABSOLUTE";
         }
     }
 }
