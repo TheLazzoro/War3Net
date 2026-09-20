@@ -156,7 +156,7 @@
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public byte FogDrawFogOverSky { get; set; }
+        public int FogDrawFogOverSky { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
@@ -206,27 +206,12 @@
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public uint Unk8 { get; set; }
+        public uint RaceHUD { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public byte Unk9 { get; set; }
-
-        /// <summary>
-        /// Definitive Edition (3.0.0).
-        /// </summary>
-        public byte Unk10 { get; set; }
-
-        /// <summary>
-        /// Definitive Edition (3.0.0).
-        /// </summary>
-        public byte Unk11 { get; set; }
-
-        /// <summary>
-        /// Definitive Edition (3.0.0).
-        /// </summary>
-        public uint Unk12 { get; set; }
+        public Color AlphaTileMinimapColor { get; set; }
 
 
         public List<PlayerData> Players { get; init; } = new();

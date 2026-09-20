@@ -53,14 +53,14 @@
             MapFlags = reader.ReadInt32<MapFlags>();
             Tileset = reader.ReadByte<Tileset>();
 
-            if (FormatVersion >= MapInfoFormatVersion.v39)
-            {
-                Unk8 = reader.ReadUInt32();
-            }
-
             if (FormatVersion >= MapInfoFormatVersion.v23)
             {
                 LoadingScreenBackgroundNumber = reader.ReadInt32();
+                if (FormatVersion >= MapInfoFormatVersion.v39)
+                {
+                    RaceHUD = reader.ReadUInt32();
+                }
+
                 LoadingScreenPath = reader.ReadChars();
             }
             else if (FormatVersion >= MapInfoFormatVersion.v18)
@@ -120,10 +120,7 @@
                         FogLinearStart = reader.ReadSingle();
                         FogLinearEnd = reader.ReadSingle();
                         FogMaxOpacity = reader.ReadSingle();
-                        FogDrawFogOverSky = reader.ReadByte();
-                        Unk9 = reader.ReadByte();
-                        Unk10 = reader.ReadByte();
-                        Unk11 = reader.ReadByte();
+                        FogDrawFogOverSky = reader.ReadInt32();
                     }
 
                     if (FormatVersion >= MapInfoFormatVersion.v25)
@@ -170,7 +167,7 @@
                     HDWaterOverrideColor = reader.ReadColorBgra();
                     HDWaterEnvmapReflectivity = reader.ReadInt32();
 
-                    Unk12 = reader.ReadUInt32();
+                    AlphaTileMinimapColor = reader.ReadColorBgra();
                 }
             }
 
@@ -304,14 +301,14 @@
             writer.Write((int)MapFlags);
             writer.Write((byte)Tileset);
 
-            if (FormatVersion >= MapInfoFormatVersion.v39)
-            {
-                writer.Write(Unk8);
-            }
-
             if (FormatVersion >= MapInfoFormatVersion.v23)
             {
                 writer.Write(LoadingScreenBackgroundNumber);
+                if (FormatVersion >= MapInfoFormatVersion.v39)
+                {
+                    writer.Write(RaceHUD);
+                }
+
                 writer.WriteString(LoadingScreenPath);
             }
             else if (FormatVersion >= MapInfoFormatVersion.v18)
@@ -372,9 +369,6 @@
                         writer.Write(FogLinearEnd);
                         writer.Write(FogMaxOpacity);
                         writer.Write(FogDrawFogOverSky);
-                        writer.Write(Unk9);
-                        writer.Write(Unk10);
-                        writer.Write(Unk11);
                     }
 
                     if (FormatVersion >= MapInfoFormatVersion.v25)
@@ -422,7 +416,7 @@
                     writer.Write(HDWaterOverrideColor.ToBgra());
                     writer.Write(HDWaterEnvmapReflectivity);
 
-                    writer.Write(Unk12);
+                    writer.Write(AlphaTileMinimapColor.ToBgra());
                 }
             }
 

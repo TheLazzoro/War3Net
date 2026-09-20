@@ -59,14 +59,14 @@
             MapFlags = jsonElement.GetInt32<MapFlags>(nameof(MapFlags));
             Tileset = jsonElement.GetByte<Tileset>(nameof(Tileset));
 
-            if (FormatVersion >= MapInfoFormatVersion.v39)
-            {
-                Unk8 = jsonElement.GetUInt32(nameof(Unk8));
-            }
-
             if (FormatVersion >= MapInfoFormatVersion.v23)
             {
                 LoadingScreenBackgroundNumber = jsonElement.GetInt32(nameof(LoadingScreenBackgroundNumber));
+                if (FormatVersion >= MapInfoFormatVersion.v39)
+                {
+                    RaceHUD = jsonElement.GetUInt32(nameof(RaceHUD));
+                }
+
                 LoadingScreenPath = jsonElement.GetString(nameof(LoadingScreenPath));
             }
             else if (FormatVersion >= MapInfoFormatVersion.v18)
@@ -126,10 +126,7 @@
                         FogLinearStart = jsonElement.GetSingle(nameof(FogLinearStart));
                         FogLinearEnd = jsonElement.GetSingle(nameof(FogLinearEnd));
                         FogMaxOpacity = jsonElement.GetSingle(nameof(FogMaxOpacity));
-                        FogDrawFogOverSky = jsonElement.GetByte(nameof(FogDrawFogOverSky));
-                        Unk9 = jsonElement.GetByte(nameof(Unk9));
-                        Unk10 = jsonElement.GetByte(nameof(Unk10));
-                        Unk11 = jsonElement.GetByte(nameof(Unk11));
+                        FogDrawFogOverSky = jsonElement.GetInt32(nameof(FogDrawFogOverSky));
                     }
 
                     if (FormatVersion >= MapInfoFormatVersion.v25)
@@ -176,7 +173,7 @@
                     HDWaterOverrideColor = Color.FromArgb(jsonElement.GetInt32(nameof(HDWaterOverrideColor)));
                     HDWaterEnvmapReflectivity = jsonElement.GetInt32(nameof(HDWaterEnvmapReflectivity));
 
-                    Unk12 = jsonElement.GetUInt32(nameof(Unk12));
+                    AlphaTileMinimapColor = Color.FromArgb(jsonElement.GetInt32(nameof(AlphaTileMinimapColor)));
                 }
             }
 
@@ -271,14 +268,14 @@
             writer.WriteObject(nameof(MapFlags), MapFlags, options);
             writer.WriteObject(nameof(Tileset), Tileset, options);
 
-            if (FormatVersion >= MapInfoFormatVersion.v39)
-            {
-                writer.WriteNumber(nameof(Unk8), Unk8);
-            }
-
             if (FormatVersion >= MapInfoFormatVersion.v23)
             {
                 writer.WriteNumber(nameof(LoadingScreenBackgroundNumber), LoadingScreenBackgroundNumber);
+                if (FormatVersion >= MapInfoFormatVersion.v39)
+                {
+                    writer.WriteNumber(nameof(RaceHUD), RaceHUD);
+                }
+
                 writer.WriteString(nameof(LoadingScreenPath), LoadingScreenPath);
             }
             else if (FormatVersion >= MapInfoFormatVersion.v18)
@@ -339,9 +336,6 @@
                         writer.WriteNumber(nameof(FogLinearEnd), FogLinearEnd);
                         writer.WriteNumber(nameof(FogMaxOpacity), FogMaxOpacity);
                         writer.WriteNumber(nameof(FogDrawFogOverSky), FogDrawFogOverSky);
-                        writer.WriteObject(nameof(Unk9), Unk9);
-                        writer.WriteObject(nameof(Unk10), Unk10);
-                        writer.WriteObject(nameof(Unk11), Unk11);
                     }
 
                     if (FormatVersion >= MapInfoFormatVersion.v25)
@@ -389,7 +383,7 @@
                     writer.WriteNumber(nameof(HDWaterOverrideColor), HDWaterOverrideColor.ToBgra());
                     writer.WriteNumber(nameof(HDWaterEnvmapReflectivity), HDWaterEnvmapReflectivity);
 
-                    writer.WriteNumber(nameof(Unk12), Unk12);
+                    writer.WriteObject(nameof(AlphaTileMinimapColor), AlphaTileMinimapColor);
                 }
             }
 
