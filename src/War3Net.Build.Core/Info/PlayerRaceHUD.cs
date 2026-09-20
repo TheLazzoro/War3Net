@@ -9,6 +9,5 @@
         Undead = 1 << 3,
         Selectable = 1 << 6,
         Forsaken = 1 << 7,
-        NeverSelected = 32758,
     }
 }

@@ -30,7 +30,17 @@
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public PlayerRaceHUD RaceHUD { get; set; }
+        public int RaceHUD { get; set; }
+
+        public PlayerRaceHUD RaceHUDEnum
+        {
+            get
+            {
+                var isDefined = Enum.IsDefined(typeof(PlayerRaceHUD), RaceHUD); // Initial data can be junk
+                return isDefined ? (PlayerRaceHUD)RaceHUD : PlayerRaceHUD.Selectable;
+            }
+            set => RaceHUD = (int)RaceHUDEnum;
+        }
 
         public PlayerFlags Flags { get; set; }
 
