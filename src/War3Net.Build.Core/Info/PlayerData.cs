@@ -39,7 +39,7 @@
                 var isDefined = Enum.IsDefined(typeof(PlayerRaceHUD), RaceHUD); // Initial data can be junk
                 return isDefined ? (PlayerRaceHUD)RaceHUD : PlayerRaceHUD.Selectable;
             }
-            set => RaceHUD = (int)RaceHUDEnum;
+            set => RaceHUD = (int)value;
         }
 
         public PlayerFlags Flags { get; set; }

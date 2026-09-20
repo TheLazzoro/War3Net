@@ -173,7 +173,7 @@
                     HDWaterOverrideColor = Color.FromArgb(jsonElement.GetInt32(nameof(HDWaterOverrideColor)));
                     HDWaterEnvmapReflectivity = jsonElement.GetInt32(nameof(HDWaterEnvmapReflectivity));
 
-                    AlphaTileMinimapColor = Color.FromArgb(jsonElement.GetInt32(nameof(AlphaTileMinimapColor)));
+                    AlphaTileMinimapColor = jsonElement.GetColor(nameof(AlphaTileMinimapColor));
                 }
             }
 
