@@ -50,6 +50,18 @@
 
         public Color FogColor { get; set; }
 
+        public float FogHeightStart { get; set; }
+
+        public float FogHeightEnd { get; set; }
+
+        public float FogLinearStart { get; set; }
+
+        public float FogLinearEnd { get; set; }
+
+        public float FogMaxOpacity { get; set; }
+
+        public int FogDrawFogOverSky { get; set; }
+
         public CampaignRace Race { get; set; }
 
         public CampaignBackgroundVersion BackgroundVersion { get; set; }
