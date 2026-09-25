@@ -1,6 +1,4 @@
-﻿using System.Reflection.PortableExecutable;
-
-namespace War3Net.Build.Info
+﻿namespace War3Net.Build.Info
 {
     [JsonConverter(typeof(JsonCampaignInfoConverter))]
     public sealed partial class CampaignInfo
