@@ -5,6 +5,5 @@
         Default = 0,
         Classic = 1,
         Reforged = 2,
-        DefinitiveEdition = 633,
     }
 }
