@@ -31,7 +31,7 @@
         public int CameraBlocker { get; set; }
 
         /// <summary>Introduced in patch 3.0.0.</summary>
-        public int AlphaTileMinimapColor { get; set; }
+        public Color AlphaTileMinimapColor { get; set; }
 
         public float Width => Right - Left;
 

@@ -7,6 +7,6 @@
         NonSolidVisible = 1 << 0,
         Normal = 1 << 1,
         WithZ = 1 << 2,
-        Unknown = 1 << 6,
+        Flag7 = 1 << 6,
     }
 }

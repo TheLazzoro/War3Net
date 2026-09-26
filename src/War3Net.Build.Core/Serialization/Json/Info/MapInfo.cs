@@ -170,7 +170,7 @@
                     HDWaterEdgeSoftness = jsonElement.GetInt32(nameof(HDWaterEdgeSoftness));
                     HDWaterWavesVertexDisplacement = jsonElement.GetInt32(nameof(HDWaterWavesVertexDisplacement));
                     HDWaterWavesNormalMapStrength = jsonElement.GetInt32(nameof(HDWaterWavesNormalMapStrength));
-                    HDWaterOverrideColor = Color.FromArgb(jsonElement.GetInt32(nameof(HDWaterOverrideColor)));
+                    HDWaterOverrideColor = jsonElement.GetColor(nameof(HDWaterOverrideColor));
                     HDWaterEnvmapReflectivity = jsonElement.GetInt32(nameof(HDWaterEnvmapReflectivity));
 
                     AlphaTileMinimapColor = jsonElement.GetColor(nameof(AlphaTileMinimapColor));
@@ -380,10 +380,10 @@
                     writer.WriteNumber(nameof(HDWaterEdgeSoftness), HDWaterEdgeSoftness);
                     writer.WriteNumber(nameof(HDWaterWavesVertexDisplacement), HDWaterWavesVertexDisplacement);
                     writer.WriteNumber(nameof(HDWaterWavesNormalMapStrength), HDWaterWavesNormalMapStrength);
-                    writer.WriteNumber(nameof(HDWaterOverrideColor), HDWaterOverrideColor.ToBgra());
+                    writer.Write(nameof(HDWaterOverrideColor), HDWaterOverrideColor);
                     writer.WriteNumber(nameof(HDWaterEnvmapReflectivity), HDWaterEnvmapReflectivity);
 
-                    writer.WriteObject(nameof(AlphaTileMinimapColor), AlphaTileMinimapColor);
+                    writer.Write(nameof(AlphaTileMinimapColor), AlphaTileMinimapColor);
                 }
             }
 

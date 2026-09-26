@@ -21,7 +21,7 @@
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                GroupId = reader.ReadInt32();
+                GroupId = reader.ReadUInt32();
             }
 
             if (formatVersion > MapWidgetsFormatVersion.v6)
@@ -44,7 +44,7 @@
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                Unk1 = reader.ReadUInt32();
+                Unk1 = reader.ReadInt32();
             }
 
             CreationNumber = reader.ReadInt32();

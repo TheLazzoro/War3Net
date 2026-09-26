@@ -25,7 +25,7 @@
             writer.WriteStartObject();
             writer.WriteNumber(nameof(LightIndex), LightIndex);
             writer.WriteNumber(nameof(IsShadowCasting), IsShadowCasting);
-            writer.WriteObject(nameof(Color), Color, options);
+            writer.Write(nameof(Color), Color);
             writer.WriteNumber(nameof(Intensity), Intensity);
             writer.WriteNumber(nameof(ShadowCastingStart), ShadowCastingStart);
             writer.WriteNumber(nameof(ShadowCastingEnd), ShadowCastingEnd);

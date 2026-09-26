@@ -23,7 +23,7 @@
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                GroupId = jsonElement.GetInt32(nameof(GroupId));
+                GroupId = jsonElement.GetUInt32(nameof(GroupId));
             }
 
             if (formatVersion > MapWidgetsFormatVersion.v6)
@@ -45,7 +45,7 @@
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                Unk1 = jsonElement.GetUInt32(nameof(Unk1));
+                Unk1 = jsonElement.GetInt32(nameof(Unk1));
             }
 
             CreationNumber = jsonElement.GetInt32(nameof(CreationNumber));

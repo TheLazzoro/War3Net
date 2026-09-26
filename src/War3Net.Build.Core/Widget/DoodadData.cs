@@ -15,10 +15,10 @@
         public byte Life { get; set; }
 
         /// <summary>Introduced in patch 3.0.0.</summary>
-        public int GroupId { get; set; }
+        public uint GroupId { get; set; }
 
         /// <summary>Introduced in patch 3.0.0.</summary>
-        public uint Unk1 { get; set; }
+        public int Unk1 { get; set; }
 
         /// <summary>Introduced in patch 3.0.0.</summary>
         public float Roll { get; set; }

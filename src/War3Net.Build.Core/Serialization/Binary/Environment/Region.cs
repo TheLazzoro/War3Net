@@ -22,7 +22,7 @@
             if (formatVersion >= MapRegionsFormatVersion.v7)
             {
                 CameraBlocker = reader.ReadInt32();
-                AlphaTileMinimapColor = reader.ReadInt32();
+                AlphaTileMinimapColor = reader.ReadColorBgra();
             }
         }
 
@@ -41,7 +41,7 @@
             if (formatVersion >= MapRegionsFormatVersion.v7)
             {
                 writer.Write(CameraBlocker);
-                writer.Write(AlphaTileMinimapColor);
+                writer.Write(AlphaTileMinimapColor.ToBgra());
             }
         }
     }

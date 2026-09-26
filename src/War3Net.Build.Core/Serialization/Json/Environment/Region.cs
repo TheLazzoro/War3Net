@@ -27,7 +27,7 @@
             if (formatVersion >= MapRegionsFormatVersion.v7)
             {
                 CameraBlocker = jsonElement.GetInt32(nameof(CameraBlocker));
-                AlphaTileMinimapColor = jsonElement.GetInt32(nameof(AlphaTileMinimapColor));
+                AlphaTileMinimapColor = jsonElement.GetColor(nameof(AlphaTileMinimapColor));
             }
         }
 
@@ -53,7 +53,7 @@
             if (formatVersion >= MapRegionsFormatVersion.v7)
             {
                 writer.WriteNumber(nameof(CameraBlocker), CameraBlocker);
-                writer.WriteNumber(nameof(AlphaTileMinimapColor), AlphaTileMinimapColor);
+                writer.Write(nameof(AlphaTileMinimapColor), AlphaTileMinimapColor);
             }
 
             writer.WriteEndObject();
