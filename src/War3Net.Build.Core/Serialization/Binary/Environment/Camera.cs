@@ -27,8 +27,8 @@
 
                 if (formatVersion >= MapCamerasFormatVersion.v3)
                 {
-                    DoFDistance = reader.ReadSingle();
-                    DoFScale = reader.ReadSingle();
+                    DofDistance = reader.ReadSingle();
+                    DofScale = reader.ReadSingle();
                     PosAbsoluteZ = reader.ReadSingle();
                 }
             }
@@ -66,8 +66,8 @@
 
                 if (formatVersion >= MapCamerasFormatVersion.v3)
                 {
-                    writer.Write(DoFDistance);
-                    writer.Write(DoFScale);
+                    writer.Write(DofDistance);
+                    writer.Write(DofScale);
                     writer.Write(PosAbsoluteZ);
                 }
             }

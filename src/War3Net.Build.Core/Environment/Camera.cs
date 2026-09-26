@@ -33,14 +33,18 @@
 
         public float LocalRoll { get; set; }
 
-        public float DoFDistance { get; set; }
+        /// <summary>Introduced in patch 3.0.0.</summary>
+        public float DofDistance { get; set; }
 
-        public float DoFScale { get; set; }
+        /// <summary>Introduced in patch 3.0.0.</summary>
+        public float DofScale { get; set; }
 
+        /// <summary>Introduced in patch 3.0.0.</summary>
         public float PosAbsoluteZ { get; set; }
 
         public string Name { get; set; }
 
+        /// <summary>Introduced in patch 3.0.0.</summary>
         public int Unk1 { get; set; }
 
         public override string ToString() => Name;

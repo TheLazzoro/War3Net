@@ -64,7 +64,7 @@
                 LoadingScreenBackgroundNumber = jsonElement.GetInt32(nameof(LoadingScreenBackgroundNumber));
                 if (FormatVersion >= MapInfoFormatVersion.v39)
                 {
-                    RaceHUD = jsonElement.GetUInt32(nameof(RaceHUD));
+                    RaceHud = jsonElement.GetUInt32(nameof(RaceHud));
                 }
 
                 LoadingScreenPath = jsonElement.GetString(nameof(LoadingScreenPath));
@@ -273,7 +273,7 @@
                 writer.WriteNumber(nameof(LoadingScreenBackgroundNumber), LoadingScreenBackgroundNumber);
                 if (FormatVersion >= MapInfoFormatVersion.v39)
                 {
-                    writer.WriteNumber(nameof(RaceHUD), RaceHUD);
+                    writer.WriteNumber(nameof(RaceHud), RaceHud);
                 }
 
                 writer.WriteString(nameof(LoadingScreenPath), LoadingScreenPath);

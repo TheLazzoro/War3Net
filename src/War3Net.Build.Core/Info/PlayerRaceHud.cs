@@ -1,7 +1,8 @@
 ﻿namespace War3Net.Build.Info
 {
+    /// <summary>Introduced in patch 3.0.0.</summary>
     [Flags]
-    public enum PlayerRaceHUD
+    public enum PlayerRaceHud
     {
         Human = 1 << 0,
         Orc = 1 << 1,

@@ -17,10 +17,11 @@
 
         public byte Unk2 { get; set; }
 
+        /// <summary>Introduced in patch 3.0.0.</summary>
         public uint GroupId { get; set; }
 
+        /// <summary>Introduced in patch 3.0.0.</summary>
         public byte[] Unk4 { get; set; }
-
 
         /// <summary>
         /// Set to -1 to use the default value.

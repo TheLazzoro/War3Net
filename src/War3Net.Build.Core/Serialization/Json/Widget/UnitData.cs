@@ -30,7 +30,6 @@
             OwnerId = jsonElement.GetInt32(nameof(OwnerId));
             Unk1 = jsonElement.GetByte(nameof(Unk1));
             Unk2 = jsonElement.GetByte(nameof(Unk2));
-
             HP = jsonElement.GetInt32(nameof(HP));
             MP = jsonElement.GetInt32(nameof(MP));
 
@@ -120,7 +119,6 @@
             writer.WriteNumber(nameof(OwnerId), OwnerId);
             writer.WriteNumber(nameof(Unk1), Unk1);
             writer.WriteNumber(nameof(Unk2), Unk2);
-
             writer.WriteNumber(nameof(HP), HP);
             writer.WriteNumber(nameof(MP), MP);
 

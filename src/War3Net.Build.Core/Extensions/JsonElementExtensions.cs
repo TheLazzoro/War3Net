@@ -161,7 +161,7 @@ namespace War3Net.Build.Extensions
 
         public static DoodadData GetMapDoodadData(this JsonElement jsonElement, MapWidgetsFormatVersion formatVersion, MapWidgetsSubVersion subVersion, bool useNewFormat) => new DoodadData(jsonElement, formatVersion, subVersion, useNewFormat);
 
-        public static DoodadLightData ReadMapDoodadLightData(this JsonElement jsonElement) => new DoodadLightData(jsonElement);
+        public static DoodadLightData GetMapDoodadLightData(this JsonElement jsonElement) => new DoodadLightData(jsonElement);
 
         public static SpecialDoodadData GetMapSpecialDoodadData(this JsonElement jsonElement, MapWidgetsFormatVersion formatVersion, MapWidgetsSubVersion subVersion, SpecialDoodadVersion specialDoodadVersion) => new SpecialDoodadData(jsonElement, formatVersion, subVersion, specialDoodadVersion);
 

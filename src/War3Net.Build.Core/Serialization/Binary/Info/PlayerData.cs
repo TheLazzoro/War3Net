@@ -14,7 +14,7 @@
             Race = reader.ReadInt32<PlayerRace>();
             if (formatVersion >= MapInfoFormatVersion.v39)
             {
-                RaceHUD = reader.ReadInt32();
+                RaceHud = reader.ReadInt32();
             }
 
             Flags = reader.ReadInt32<PlayerFlags>();
@@ -42,7 +42,7 @@
             writer.Write((int)Race);
             if (formatVersion >= MapInfoFormatVersion.v39)
             {
-                writer.Write(RaceHUD);
+                writer.Write(RaceHud);
             }
 
             writer.Write((int)Flags);

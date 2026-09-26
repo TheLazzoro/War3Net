@@ -19,7 +19,7 @@
             Race = jsonElement.GetInt32<PlayerRace>(nameof(Race));
             if (formatVersion >= MapInfoFormatVersion.v39)
             {
-                RaceHUD = jsonElement.GetInt32(nameof(RaceHUD));
+                RaceHud = jsonElement.GetInt32(nameof(RaceHud));
             }
 
             Flags = jsonElement.GetInt32<PlayerFlags>(nameof(Flags));
@@ -54,7 +54,7 @@
             writer.WriteObject(nameof(Race), Race, options);
             if (formatVersion >= MapInfoFormatVersion.v39)
             {
-                writer.WriteObject(nameof(RaceHUD), RaceHUD, options);
+                writer.WriteObject(nameof(RaceHud), RaceHud, options);
             }
 
             writer.WriteObject(nameof(Flags), Flags, options);

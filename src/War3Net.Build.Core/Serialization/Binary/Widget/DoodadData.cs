@@ -1,6 +1,4 @@
-﻿using War3Net.IO.Mpq.Extensions;
-
-namespace War3Net.Build.Widget
+﻿namespace War3Net.Build.Widget
 {
     public sealed partial class DoodadData : WidgetData
     {
@@ -46,7 +44,7 @@ namespace War3Net.Build.Widget
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                Unknown1 = reader.ReadUInt32();
+                Unk1 = reader.ReadUInt32();
             }
 
             CreationNumber = reader.ReadInt32();
@@ -105,7 +103,7 @@ namespace War3Net.Build.Widget
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                writer.Write(Unknown1);
+                writer.Write(Unk1);
             }
 
             writer.Write(CreationNumber);

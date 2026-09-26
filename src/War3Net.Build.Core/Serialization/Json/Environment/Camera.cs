@@ -32,8 +32,8 @@
 
                 if (formatVersion >= MapCamerasFormatVersion.v3)
                 {
-                    DoFDistance = jsonElement.GetSingle(nameof(DoFDistance));
-                    DoFScale = jsonElement.GetSingle(nameof(DoFScale));
+                    DofDistance = jsonElement.GetSingle(nameof(DofDistance));
+                    DofScale = jsonElement.GetSingle(nameof(DofScale));
                     PosAbsoluteZ = jsonElement.GetSingle(nameof(PosAbsoluteZ));
                 }
             }
@@ -73,8 +73,8 @@
 
                 if (formatVersion >= MapCamerasFormatVersion.v3)
                 {
-                    writer.WriteNumber(nameof(DoFDistance), DoFDistance);
-                    writer.WriteNumber(nameof(DoFScale), DoFScale);
+                    writer.WriteNumber(nameof(DofDistance), DofDistance);
+                    writer.WriteNumber(nameof(DofScale), DofScale);
                     writer.WriteNumber(nameof(PosAbsoluteZ), PosAbsoluteZ);
                 }
             }

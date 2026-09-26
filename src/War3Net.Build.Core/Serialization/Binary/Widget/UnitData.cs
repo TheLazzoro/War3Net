@@ -28,7 +28,6 @@
             OwnerId = reader.ReadInt32();
             Unk1 = reader.ReadByte();
             Unk2 = reader.ReadByte();
-
             HP = reader.ReadInt32();
             MP = reader.ReadInt32();
 
@@ -114,7 +113,6 @@
             writer.Write(OwnerId);
             writer.Write(Unk1);
             writer.Write(Unk2);
-
             writer.Write(HP);
             writer.Write(MP);
 

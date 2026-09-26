@@ -45,7 +45,7 @@
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                Unknown1 = jsonElement.GetUInt32(nameof(Unknown1));
+                Unk1 = jsonElement.GetUInt32(nameof(Unk1));
             }
 
             CreationNumber = jsonElement.GetInt32(nameof(CreationNumber));
@@ -56,7 +56,7 @@
                 Pitch = jsonElement.GetSingle(nameof(Pitch));
                 foreach (var element in jsonElement.EnumerateArray(nameof(DoodadLights)))
                 {
-                    DoodadLights.Add(element.ReadMapDoodadLightData());
+                    DoodadLights.Add(element.GetMapDoodadLightData());
                 }
             }
         }
@@ -108,7 +108,7 @@
 
             if (formatVersion >= MapWidgetsFormatVersion.v13)
             {
-                writer.WriteNumber(nameof(Unknown1), Unknown1);
+                writer.WriteNumber(nameof(Unk1), Unk1);
             }
 
             writer.WriteNumber(nameof(CreationNumber), CreationNumber);

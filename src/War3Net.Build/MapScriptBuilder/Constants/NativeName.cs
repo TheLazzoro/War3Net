@@ -5,6 +5,7 @@
         internal static class NativeName
         {
             internal const string AddWeatherEffect = "AddWeatherEffect";
+            internal const string BlzCameraSetupSetCameraType = "BlzCameraSetupSetCameraType";
             internal const string BlzCreateDeadDestructableWithSkin = "BlzCreateDeadDestructableWithSkin";
             internal const string BlzCreateDeadDestructableZWithSkin = "BlzCreateDeadDestructableZWithSkin";
             internal const string BlzCreateDestructableWithSkin = "BlzCreateDestructableWithSkin";
@@ -13,7 +14,6 @@
             internal const string BlzCreateUnitWithSkin = "BlzCreateUnitWithSkin";
             internal const string CameraSetupSetDestPosition = "CameraSetupSetDestPosition";
             internal const string CameraSetupSetField = "CameraSetupSetField";
-            internal const string BlzCameraSetupSetCameraType = "BlzCameraSetupSetCameraType";
             internal const string ChooseRandomCreep = "ChooseRandomCreep";
             internal const string ChooseRandomItem = "ChooseRandomItem";
             internal const string ChooseRandomItemEx = "ChooseRandomItemEx";

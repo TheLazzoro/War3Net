@@ -206,13 +206,12 @@
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
-        public uint RaceHUD { get; set; }
+        public int RaceHud { get; set; }
 
         /// <summary>
         /// Definitive Edition (3.0.0).
         /// </summary>
         public Color AlphaTileMinimapColor { get; set; }
-
 
         public List<PlayerData> Players { get; init; } = new();
 

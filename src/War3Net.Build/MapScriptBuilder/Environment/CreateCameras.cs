@@ -45,8 +45,8 @@
 
                 if (mapCameras.FormatVersion >= MapCamerasFormatVersion.v3)
                 {
-                    writer.WriteCall(NativeName.CameraSetupSetField, cameraName, CameraFieldName.DoFDistance, JassLiteral.Real(camera.DoFDistance), "0.0");
-                    writer.WriteCall(NativeName.CameraSetupSetField, cameraName, CameraFieldName.DoFScale, JassLiteral.Real(camera.DoFScale), "0.0");
+                    writer.WriteCall(NativeName.CameraSetupSetField, cameraName, CameraFieldName.DofDistance, JassLiteral.Real(camera.DofDistance), "0.0");
+                    writer.WriteCall(NativeName.CameraSetupSetField, cameraName, CameraFieldName.DofScale, JassLiteral.Real(camera.DofScale), "0.0");
                     writer.WriteCall(NativeName.CameraSetupSetField, cameraName, CameraFieldName.PosAbsoluteZ, JassLiteral.Real(camera.PosAbsoluteZ), "0.0");
                 }
 

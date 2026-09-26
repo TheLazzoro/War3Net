@@ -14,14 +14,19 @@
         // in %, where 0x64 = 100%
         public byte Life { get; set; }
 
+        /// <summary>Introduced in patch 3.0.0.</summary>
         public int GroupId { get; set; }
 
-        public uint Unknown1 { get; set; }
+        /// <summary>Introduced in patch 3.0.0.</summary>
+        public uint Unk1 { get; set; }
 
+        /// <summary>Introduced in patch 3.0.0.</summary>
         public float Roll { get; set; }
 
+        /// <summary>Introduced in patch 3.0.0.</summary>
         public float Pitch { get; set; }
 
+        /// <summary>Introduced in patch 3.0.0.</summary>
         public List<DoodadLightData> DoodadLights { get; set; } = new();
     }
 }

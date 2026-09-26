@@ -103,10 +103,10 @@
                                     camera.LocalRoll = value;
                                     break;
                                 case "CAMERA_FIELD_DEPTH_OF_FIELD_DISTANCE":
-                                    camera.DoFDistance = value;
+                                    camera.DofDistance = value;
                                     break;
                                 case "CAMERA_FIELD_DEPTH_OF_FIELD_SCALE":
-                                    camera.DoFScale = value;
+                                    camera.DofScale = value;
                                     break;
                                 case "CAMERA_FIELD_ZABSOLUTE":
                                     camera.PosAbsoluteZ = value;
