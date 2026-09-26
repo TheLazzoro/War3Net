@@ -168,7 +168,7 @@
         public int HDWaterEnvmapReflectivity { get; set; }
 
         /// <summary>Introduced in patch 3.0.0.</summary>
-        public int RaceHud { get; set; }
+        public PlayerRaceHud RaceHud { get; set; }
 
         /// <summary>Introduced in patch 3.0.0.</summary>
         public Color AlphaTileMinimapColor { get; set; }

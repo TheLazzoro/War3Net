@@ -58,7 +58,7 @@
                 LoadingScreenBackgroundNumber = reader.ReadInt32();
                 if (FormatVersion >= MapInfoFormatVersion.v39)
                 {
-                    RaceHud = reader.ReadUInt32();
+                    RaceHud = (PlayerRaceHud)reader.ReadInt32();
                 }
 
                 LoadingScreenPath = reader.ReadChars();
@@ -306,7 +306,7 @@
                 writer.Write(LoadingScreenBackgroundNumber);
                 if (FormatVersion >= MapInfoFormatVersion.v39)
                 {
-                    writer.Write(RaceHud);
+                    writer.Write((int)RaceHud);
                 }
 
                 writer.WriteString(LoadingScreenPath);

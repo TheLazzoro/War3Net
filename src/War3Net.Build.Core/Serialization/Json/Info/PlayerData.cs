@@ -19,7 +19,7 @@
             Race = jsonElement.GetInt32<PlayerRace>(nameof(Race));
             if (formatVersion >= MapInfoFormatVersion.v39)
             {
-                RaceHud = jsonElement.GetInt32(nameof(RaceHud));
+                RaceHud = jsonElement.GetInt32Raw<PlayerRaceHud>(nameof(RaceHud));
             }
 
             Flags = jsonElement.GetInt32<PlayerFlags>(nameof(Flags));

@@ -28,18 +28,7 @@
         public PlayerRace Race { get; set; }
 
         /// <summary>Introduced in patch 3.0.0.</summary>
-        public int RaceHud { get; set; }
-
-        /// <summary>Introduced in patch 3.0.0.</summary>
-        public PlayerRaceHud RaceHudEnum
-        {
-            get
-            {
-                var isDefined = Enum.IsDefined(typeof(PlayerRaceHud), RaceHud); // Initial data can be junk
-                return isDefined ? (PlayerRaceHud)RaceHud : PlayerRaceHud.Selectable;
-            }
-            set => RaceHud = (int)value;
-        }
+        public PlayerRaceHud RaceHud { get; set; }
 
         public PlayerFlags Flags { get; set; }
 
