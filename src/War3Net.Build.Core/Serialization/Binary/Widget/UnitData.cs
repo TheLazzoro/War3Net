@@ -19,7 +19,7 @@
             useNewFormat = reader.PeekChar() >= 0x20;
             SkinId = useNewFormat ? reader.ReadInt32() : TypeId;
 
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            if (formatVersion >= MapWidgetsFormatVersion.v12)
             {
                 GroupId = reader.ReadUInt32();
             }
@@ -81,7 +81,7 @@
                 CreationNumber = reader.ReadInt32();
             }
 
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            if (formatVersion >= MapWidgetsFormatVersion.v12)
             {
                 Unk4 = reader.ReadBytes(12);
             }
@@ -104,7 +104,7 @@
                 writer.Write(SkinId);
             }
 
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            if (formatVersion >= MapWidgetsFormatVersion.v12)
             {
                 writer.Write(GroupId);
             }
@@ -163,7 +163,7 @@
                 writer.Write(CreationNumber);
             }
 
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            if (formatVersion >= MapWidgetsFormatVersion.v12)
             {
                 writer.Write(Unk4);
             }

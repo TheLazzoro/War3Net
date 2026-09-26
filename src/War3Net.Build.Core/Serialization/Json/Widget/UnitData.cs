@@ -21,7 +21,7 @@
             Scale = jsonElement.GetVector3(nameof(Scale));
             SkinId = useNewFormat ? jsonElement.GetInt32(nameof(SkinId)) : TypeId;
 
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            if (formatVersion >= MapWidgetsFormatVersion.v12)
             {
                 GroupId = jsonElement.GetUInt32(nameof(GroupId));
             }
@@ -80,7 +80,7 @@
                 CreationNumber = jsonElement.GetInt32(nameof(CreationNumber));
             }
 
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            if (formatVersion >= MapWidgetsFormatVersion.v12)
             {
                 Unk4 = new byte[12];
                 for (var i = 0; i < 12; i++)
@@ -110,7 +110,7 @@
                 writer.WriteNumber(nameof(SkinId), SkinId);
             }
 
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            if (formatVersion >= MapWidgetsFormatVersion.v12)
             {
                 writer.WriteNumber(nameof(GroupId), GroupId);
             }
@@ -176,7 +176,7 @@
                 writer.WriteNumber(nameof(CreationNumber), CreationNumber);
             }
 
-            if (formatVersion >= MapWidgetsFormatVersion.v13)
+            if (formatVersion >= MapWidgetsFormatVersion.v12)
             {
                 foreach (var b in Unk4)
                 {
