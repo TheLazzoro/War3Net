@@ -41,7 +41,7 @@
 
             if (formatVersion >= MapCamerasFormatVersion.v3)
             {
-                Unk1 = reader.ReadInt32();
+                CameraType = reader.ReadInt32();
             }
         }
 
@@ -76,7 +76,7 @@
 
             if (formatVersion >= MapCamerasFormatVersion.v3)
             {
-                writer.Write(Unk1);
+                writer.Write(CameraType);
             }
         }
     }

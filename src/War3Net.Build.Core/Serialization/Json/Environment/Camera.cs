@@ -42,7 +42,7 @@
 
             if (formatVersion >= MapCamerasFormatVersion.v3)
             {
-                Unk1 = jsonElement.GetInt32(nameof(Unk1));
+                CameraType = jsonElement.GetInt32(nameof(CameraType));
             }
         }
 
@@ -83,7 +83,7 @@
 
             if (formatVersion >= MapCamerasFormatVersion.v3)
             {
-                writer.WriteNumber(nameof(Unk1), Unk1);
+                writer.WriteNumber(nameof(CameraType), CameraType);
             }
 
             writer.WriteEndObject();

@@ -144,7 +144,7 @@
                             callStatement.ArgumentList.ArgumentList.Items[1].TryGetIntegerExpressionValue(out var cameraType) &&
                             cameras.TryGetValue(cameraVariableName, out var camera))
                         {
-                            camera.Unk1 = cameraType;
+                            camera.CameraType = cameraType;
                         }
                         else
                         {

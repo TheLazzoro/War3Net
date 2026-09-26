@@ -53,7 +53,7 @@
                 writer.WriteCall(NativeName.CameraSetupSetDestPosition, cameraName, JassLiteral.Real(camera.TargetPosition.X), JassLiteral.Real(camera.TargetPosition.Y), "0.0");
                 if (mapCameras.FormatVersion >= MapCamerasFormatVersion.v3)
                 {
-                    writer.WriteCall(NativeName.BlzCameraSetupSetCameraType, cameraName, "0");
+                    writer.WriteCall(NativeName.BlzCameraSetupSetCameraType, cameraName, JassLiteral.Int(camera.CameraType));
                 }
 
                 writer.WriteLine();

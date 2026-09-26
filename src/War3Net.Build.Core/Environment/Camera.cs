@@ -45,7 +45,7 @@
         public string Name { get; set; }
 
         /// <summary>Introduced in patch 3.0.0.</summary>
-        public int Unk1 { get; set; }
+        public int CameraType { get; set; }
 
         public override string ToString() => Name;
     }
